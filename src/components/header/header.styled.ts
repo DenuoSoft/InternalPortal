@@ -28,11 +28,10 @@ export const HeaderList = styled.ul`
 `;
 export const HeaderLink = styled(NavLink)<{isActive: boolean}>`
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 24px;
   padding-left: 15px;
   &:hover {
-  text-decoration: underline;
+    color: #d7ff23;
   }
   
 `;

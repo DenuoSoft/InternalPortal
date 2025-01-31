@@ -18,7 +18,8 @@ import {
 
 export const Header = () => {
    const getActive = ({isActive}) => { 
-     return { color: isActive ? "#fff" : "#000" };
+     return {
+       color: isActive ? "#d7ff23" : "#28282d" };
    }; 
   return (
     <>

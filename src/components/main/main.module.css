@@ -1,8 +1,7 @@
 .layout {
   display: flex;
-  flex-flow: column;
   justify-content: center;
   width: 1440px;
   align-items: center;
-  row-gap: 24px;
+  
 }/*# sourceMappingURL=main.module.css.map */
