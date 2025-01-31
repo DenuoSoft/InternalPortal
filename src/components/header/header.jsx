@@ -7,6 +7,7 @@ import { IT } from "../main/it/it";
 import { Form } from "../main/form/form";
 import { Phonebook } from "../main/phonebook/phonebook";
 import { Search } from "./search/search";
+import logo from "../../assets/img/logo.png"
 import {
   HeaderBlock,
   HeaderLink,
@@ -23,9 +24,9 @@ export const Header = () => {
     <>
       <HeaderBlock>
         <HeaderNav>
-          <h1>Denuo portal</h1>
+        <img src={logo}  alt="logo"/>
           <HeaderList>
-            <HeaderLink to="/main" style={getActive}>
+                      <HeaderLink to="/" style={getActive}>
               Main
             </HeaderLink>
             <HeaderLink to="/hr" style={getActive}>
@@ -51,8 +52,7 @@ export const Header = () => {
         </HeaderSearch>
       </HeaderBlock>
       <Routes>
-        <Route path="/" element={<Search />}></Route>
-        <Route path="/main" element={<Main />}></Route>
+        <Route path="/" element={<Main />}></Route>
         <Route path="/hr" element={<HR />}></Route>
         <Route path="/marketing" element={<Marketing />}></Route>
         <Route path="/it" element={<IT />}></Route>

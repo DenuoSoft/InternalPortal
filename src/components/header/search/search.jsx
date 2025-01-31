@@ -19,7 +19,7 @@ export const Search =() => {
   return (
     <SearchBlock>
       <input placeholder='Search'/>
-      <button type="submit" ></button>
+      {/* <button type="submit" ></button> */}
     </SearchBlock>
   );
 }
