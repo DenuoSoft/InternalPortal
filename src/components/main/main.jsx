@@ -26,10 +26,13 @@ export const Main = () => {
 	return (
 		<main>
 			<div className={css.layout}>
-				<Box sx={{ width: '58%', typography: 'body1'}}>
+				<Box sx={{ width: '58%', typography: 'body1' }}>
 					<TabContext value={value}>
 						<Box>
-							<TabList onChange={handleChange} aria-label='lab API tabs example'>
+							<TabList
+								onChange={handleChange}
+								aria-label='lab API tabs example'
+							>
 								<Tab label='News' value='news' />
 								<Tab label='Events' value='events' />
 								<Tab label='Other' value='other' />
@@ -44,7 +47,6 @@ export const Main = () => {
 								consequatur sequi ratione facilis cupiditate. Lorem ipsum dolor,
 								sit amet consectetur adipisicing elit. In quidem vel nisi
 								mollitia corporis voluptatum tenetur, provident quia voluptates
-								
 							</span>
 							<h1>News 2</h1>
 							<span>
@@ -55,7 +57,7 @@ export const Main = () => {
 								sit amet consectetur adipisicing elit. In quidem vel nisi
 								mollitia corporis voluptatum tenetur, provident quia voluptates
 								explicabo error doloremque doloribus velit quod consequatur
-								sequi ratione facilis cupiditate. 
+								sequi ratione facilis cupiditate.
 							</span>
 							<h1>News 3</h1>
 							<span>
@@ -95,15 +97,15 @@ export const Main = () => {
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
 								quidem vel nisi mollitia corporis voluptatum tenetur, provident
 								quia voluptates explicabo error doloremque doloribus velit quod
-								consequatur sequi ratione facilis cupiditate.
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
-								quidem vel nisi mollitia corporis voluptatum tenetur, provident
-								quia voluptates explicabo error doloremque doloribus velit quod
-								consequatur sequi ratione facilis cupiditate.
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
-								quidem vel nisi mollitia corporis voluptatum tenetur, provident
-								quia voluptates explicabo error doloremque doloribus velit quod
-								consequatur sequi ratione facilis cupiditate.
+								consequatur sequi ratione facilis cupiditate. Lorem ipsum dolor,
+								sit amet consectetur adipisicing elit. In quidem vel nisi
+								mollitia corporis voluptatum tenetur, provident quia voluptates
+								explicabo error doloremque doloribus velit quod consequatur
+								sequi ratione facilis cupiditate. Lorem ipsum dolor, sit amet
+								consectetur adipisicing elit. In quidem vel nisi mollitia
+								corporis voluptatum tenetur, provident quia voluptates explicabo
+								error doloremque doloribus velit quod consequatur sequi ratione
+								facilis cupiditate.
 							</span>
 						</TabPanel>
 					</TabContext>
