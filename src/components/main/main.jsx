@@ -26,9 +26,9 @@ export const Main = () => {
 	return (
 		<main>
 			<div className={css.layout}>
-				<Box sx={{ width: '100%', typography: 'body1' }}>
+				<Box sx={{ width: '58%', typography: 'body1'}}>
 					<TabContext value={value}>
-						<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+						<Box>
 							<TabList onChange={handleChange} aria-label='lab API tabs example'>
 								<Tab label='News' value='news' />
 								<Tab label='Events' value='events' />
@@ -44,12 +44,7 @@ export const Main = () => {
 								consequatur sequi ratione facilis cupiditate. Lorem ipsum dolor,
 								sit amet consectetur adipisicing elit. In quidem vel nisi
 								mollitia corporis voluptatum tenetur, provident quia voluptates
-								explicabo error doloremque doloribus velit quod consequatur
-								sequi ratione facilis cupiditate. Lorem ipsum dolor, sit amet
-								consectetur adipisicing elit. In quidem vel nisi mollitia
-								corporis voluptatum tenetur, provident quia voluptates explicabo
-								error doloremque doloribus velit quod consequatur sequi ratione
-								facilis cupiditate.
+								
 							</span>
 							<h1>News 2</h1>
 							<span>
@@ -60,11 +55,7 @@ export const Main = () => {
 								sit amet consectetur adipisicing elit. In quidem vel nisi
 								mollitia corporis voluptatum tenetur, provident quia voluptates
 								explicabo error doloremque doloribus velit quod consequatur
-								sequi ratione facilis cupiditate. Lorem ipsum dolor, sit amet
-								consectetur adipisicing elit. In quidem vel nisi mollitia
-								corporis voluptatum tenetur, provident quia voluptates explicabo
-								error doloremque doloribus velit quod consequatur sequi ratione
-								facilis cupiditate.
+								sequi ratione facilis cupiditate. 
 							</span>
 							<h1>News 3</h1>
 							<span>
@@ -90,7 +81,7 @@ export const Main = () => {
 								quia voluptates explicabo error doloremque doloribus velit quod
 								consequatur sequi ratione facilis cupiditate.
 							</span>
-							<h3>Event 3</h3>
+							<h2>Event 3</h2>
 							<span>
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
 								quidem vel nisi mollitia corporis voluptatum tenetur, provident
@@ -98,7 +89,23 @@ export const Main = () => {
 								consequatur sequi ratione facilis cupiditate.
 							</span>
 						</TabPanel>
-						<TabPanel value='other'>Other:</TabPanel>
+						<TabPanel value='other'>
+							<h2>Other:</h2>
+							<span>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
+								quidem vel nisi mollitia corporis voluptatum tenetur, provident
+								quia voluptates explicabo error doloremque doloribus velit quod
+								consequatur sequi ratione facilis cupiditate.
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
+								quidem vel nisi mollitia corporis voluptatum tenetur, provident
+								quia voluptates explicabo error doloremque doloribus velit quod
+								consequatur sequi ratione facilis cupiditate.
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
+								quidem vel nisi mollitia corporis voluptatum tenetur, provident
+								quia voluptates explicabo error doloremque doloribus velit quod
+								consequatur sequi ratione facilis cupiditate.
+							</span>
+						</TabPanel>
 					</TabContext>
 				</Box>
 			</div>
