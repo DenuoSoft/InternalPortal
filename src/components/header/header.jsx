@@ -6,7 +6,7 @@ import { Marketing } from "../main/marketing/marketing";
 import { IT } from "../main/it/it";
 import { Form } from "../main/form/form";
 import { Phonebook } from "../main/phonebook/phonebook";
-import { Search } from "./search/search";
+//import { Search } from "./search/search";
 import logo from "../../assets/img/logo.png"
 import {
   HeaderBlock,
@@ -48,7 +48,7 @@ export const Header = () => {
           </HeaderList>
         </HeaderNav>
         <HeaderSearch>
-          <Search />
+          
           <Profile />
         </HeaderSearch>
       </HeaderBlock>

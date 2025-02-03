@@ -24,6 +24,7 @@ export const Phonebook = () => {
   return (
     <main>
       <div className={css.layout}>
+        <div className={css.searchBlock}>
         <div className={css.searchbox}>
         <input
             type='text'
@@ -32,10 +33,9 @@ export const Phonebook = () => {
             onChange={handleSearchChange}
             className={css.input}
 				/>
-
         </div>
-				
-        <div className={css.dataBlock}>
+        </div>
+              <div className={css.dataBlock}>
           <div className={css.dataColumns}>
             {columns.map((column, index) => (
               <div key={index}>{column}</div>
@@ -56,7 +56,27 @@ export const Phonebook = () => {
 						<div className='text-center'>Нет совпадений</div>
 					)}
 				</div>
-			</div>
+      </div>
+      <div className={css.column}>
+        {columns.map((column, index) => (
+          <div className={css.header} key={index}>{column}     
+          </div>
+      ))}
+         {filteredContacts.length > 0 ? (
+            filteredContacts.map((contact) => (
+              <div key={contact.id} className={css.columnItem}>
+								<div>{contact.name}</div>
+								<div>{contact.position}</div>
+                <div>{contact.phone}</div>
+                <div>{contact.mobile}</div>
+								<div>{contact.location}</div>
+							</div>
+						))
+					) : (
+						<div className='text-center'>Нет совпадений</div>
+					)}     
+        
+      </div>
 		</main>
 	);
 };
