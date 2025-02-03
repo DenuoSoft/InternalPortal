@@ -1,3 +1,39 @@
+.layout {
+ display: flex;
+ flex-direction: column;
+ margin-top: 30px;    
+}
+.input {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    min-width: 0;
+    background-color: #f1f1f0;
+  }
+.searchbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 30px;
+    width: 300px;
+}
+.dataBlock {
+    margin-top: 20px;
+}
+.dataColumns {
+    display: flex;
+    
+    justify-content: space-around;
+    border: 1px solid black;
+}
+.columnItem {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 
 
