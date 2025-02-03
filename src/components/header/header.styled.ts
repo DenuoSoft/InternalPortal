@@ -28,8 +28,8 @@ export const HeaderList = styled.ul`
 `;
 export const HeaderLink = styled(NavLink)<{isActive: boolean}>`
   text-decoration: none;
-  font-size: 24px;
-  padding-left: 15px;
+  font-size: 22px;
+  padding-left: 25px;
   &:hover {
     color: #d7ff23;
   }
