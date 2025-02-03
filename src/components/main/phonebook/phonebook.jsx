@@ -1,106 +1,62 @@
-import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
-import SearchBar from "material-ui-search-bar";
-import { useState } from "react";
-
-const columns = [
-  { id: "userName", label: "User Name", minWidth: 170 },
-  { id: "phoneNumber", label: "Extension", minWidth: 100 },
-  { id: "position", label: "Position", minWidth: 170 },
-  { id: "office", label: "Office", minWidth: 170 },
-  { id: "assistant", label: "Assistant", minWidth: 170 },
-];
-
-function createData(userName, phoneNumber, position, office, assistant) {
-  return { userName, phoneNumber, position, office, assistant };
-}
-
-const rows = [
-  createData("India", "IN", 1324171354, 3287263),
-  createData("China", "CN", 1403500365, 9596961),
-  createData("Italy", "IT", 60483973, 301340),
-  createData("United States", "US", 327167434, 9833520),
-  createData("Canada", "CA", 37602103, 9984670),
-  createData("Australia", "AU", 25475400, 7692024),
-  createData("Germany", "DE", 83019200, 357578),
-  createData("Ireland", "IE", 4857000, 70273),
-  createData("Mexico", "MX", 126577691, 1972550),
-  createData("Japan", "JP", 126317000, 377973),
-  createData("France", "FR", 67022000, 640679),
-  createData("United Kingdom", "GB", 67545757, 242495),
-  createData("Russia", "RU", 146793744, 17098246),
-  createData("Nigeria", "NG", 200962417, 923768),
-  createData("Brazil", "BR", 210147125, 8515767),
-];
+import { useState } from 'react';
+import { userData } from '../../../data/data'
 
 export const Phonebook = () => {
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [contacts, setContacts] = useState(userData);
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    contact.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    contact.phone.includes(searchTerm) ||
+    contact.location.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <SearchBar />
-      <TableContainer sx={{ maxHeight: 900 }}>
-        <Table stickyHeader aria-label="caption table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === "number"
-                            ? column.format(value)
-                            : value}
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </Paper>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+      <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg">
+        <h1 className="text-2xl font-bold mb-6 text-center">Телефонный справочник</h1>
+        
+        <input
+          type="text"
+          placeholder="Поиск..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="w-full p-4 mb-4 border rounded-md"
+        />
+
+        <table className="w-full table-auto border-collapse">
+          <thead>
+            <tr>
+              <th className="border p-2">Name</th>
+              <th className="border p-2">Job position</th>
+              <th className="border p-2">Extension</th>
+              <th className="border p-2">Office</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredContacts.length > 0 ? (
+              filteredContacts.map(contact => (
+                <tr key={contact.id}>
+                  <td className="border p-2">{contact.name}</td>
+                  <td className="border p-2">{contact.position}</td>
+                  <td className="border p-2">{contact.phone}</td>
+                  <td className="border p-2">{contact.location}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4" className="border p-2 text-center">Нет совпадений</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
+
