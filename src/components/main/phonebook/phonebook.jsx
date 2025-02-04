@@ -4,8 +4,8 @@ import { userData } from '../../../data/userData';
 
 export const Phonebook = () => {
 	const [searchTerm, setSearchTerm] = useState('');
-	const [contacts, setContacts] = useState(userData || []);
-
+  const [contacts, setContacts] = useState(userData || []);
+  
 	const handleSearchChange = (e) => {
 		setSearchTerm(e.target.value);
 	};
@@ -26,7 +26,7 @@ export const Phonebook = () => {
 			(contact.location &&
 				contact.location.toLowerCase().includes(searchTerm.toLowerCase()))
 	);
-
+  
 	return (
 		<main>
 			<div className={css.layout}>
@@ -64,7 +64,8 @@ export const Phonebook = () => {
 					))
 				) : (
             <div className={css.textCenter }>Нет совпадений</div>
-				)}
+        )}
+        
 			</div>
 		</main>
 	);
