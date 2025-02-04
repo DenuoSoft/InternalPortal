@@ -23,11 +23,10 @@
     width: 400px;
 }
 
-.column {
+.columns {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    
     width: 100%;
 }
 .columnHeader {
@@ -53,7 +52,10 @@
     color: #4e4949
 
 }
-
+.textCenter {
+    padding-top: 20px;
+    text-align: center;
+}
 
 
 

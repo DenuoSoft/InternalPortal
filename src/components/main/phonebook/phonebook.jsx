@@ -43,7 +43,7 @@ export const Phonebook = () => {
 				</div>
 				
 			</div>
-			<div className={css.column}>
+			<div className={css.columns}>
 				<div className={css.columnHeader}>
 					{columns.map((column, index) => (
 						<div className={css.header} key={index}>
@@ -63,7 +63,7 @@ export const Phonebook = () => {
 						</div>
 					))
 				) : (
-					<div className='text-center'>Нет совпадений</div>
+            <div className={css.textCenter }>Нет совпадений</div>
 				)}
 			</div>
 		</main>
