@@ -1,7 +1,7 @@
 .layout {
  display: flex;
  flex-direction: column;
- margin-top: 30px;    
+    
 }
 .searchBlock {
     display: flex;
@@ -14,28 +14,44 @@
     border: none;
     outline: none;
     min-width: 0;
-    background-color: #f1f1f0;
+    background-color: #f0f0f0;
   }
 .searchbox {
     display: flex;
     align-items: center;
     height: 30px;
-    width: 300px;
+    width: 400px;
 }
-.dataBlock {
+
+.column {
     margin-top: 20px;
-}
-.dataColumns {
     display: flex;
+    flex-direction: column;
     
-    justify-content: space-around;
-    border: 1px solid black;
+    width: 100%;
 }
-.columnItem {
-    margin-top: 15px;
+.columnHeader {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #4e4949
+
+}
+.header {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+    
+}
+.columnElem {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.columnCell {
+    flex: 1;
+    padding: 10px;
+    color: #4e4949
+
 }
 
 

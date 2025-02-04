@@ -1,7 +1,6 @@
 .layout {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
 }
 
 .searchBlock {
@@ -16,29 +15,43 @@
   border: none;
   outline: none;
   min-width: 0;
-  background-color: #f1f1f0;
+  background-color: #f0f0f0;
 }
 
 .searchbox {
   display: flex;
   align-items: center;
   height: 30px;
-  width: 300px;
+  width: 400px;
 }
 
-.dataBlock {
+.column {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.dataColumns {
+.columnHeader {
   display: flex;
-  justify-content: space-around;
-  border: 1px solid black;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #4e4949;
 }
 
-.columnItem {
-  margin-top: 15px;
+.header {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.columnElem {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  border-bottom: 1px solid #ddd;
+}
+
+.columnCell {
+  flex: 1;
+  padding: 10px;
+  color: #4e4949;
 }/*# sourceMappingURL=phonebook.module.css.map */
